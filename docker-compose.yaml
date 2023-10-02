@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   admin-ui:
-    container_name: ms-delivery-admin-ui
+    container_name: wide-delivery-admin-ui
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.wide-delivery-admin-ui.rule=PathPrefix(`/admin`)"
