@@ -1,0 +1,5 @@
+@import "/src/styles/variables.scss";
+
+.sign-in-form-wrapper {
+	@include glass-background;
+}

@@ -1,0 +1,7 @@
+@import "/src/styles/variables.scss";
+
+.search-block-wrapper {
+	@include glass-background;
+
+	border: 1px solid black;
+}
