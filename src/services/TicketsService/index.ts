@@ -36,7 +36,12 @@ export default class TicketsService {
 			.delete<any>(`/ticket/${ticketId}`)
 			.then((res): any => res.status);
 	}
-	static async sendMessage(messageInfo: any): Promise<AxiosResponse<any>> {
-		return $api.put<any>(`/ticket`, messageInfo).then((res): any => res.data);
+	static async sendMessage(
+		ticketId: string,
+		messageInfo: any
+	): Promise<AxiosResponse<any>> {
+		return $api
+			.post<any>(`/ticket/${ticketId}/message`, messageInfo)
+			.then((res): any => res.data);
 	}
 }

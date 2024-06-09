@@ -29,14 +29,11 @@ const TicketChat: FC<TicketChatProps> = ({ ticket }) => {
 	const handleSendMessage = async (messageText: string) => {
 		if (messageText !== "") {
 			const newMessage = {
-				...ticket.conversation[ticket.conversation.length - 1],
-				id: "665a52423a25172289e77434",
 				text: messageText,
 				authorId: currentUserId,
 			};
-			ticket.conversation.push(newMessage);
 			setMessageText("");
-			await sendMessage(ticket);
+			await sendMessage(ticket.id, newMessage);
 		}
 	};
 

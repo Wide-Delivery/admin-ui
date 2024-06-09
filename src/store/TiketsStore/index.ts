@@ -65,9 +65,12 @@ const useTicketsStore = create<any>((set, get) => ({
 			throw error;
 		}
 	},
-	sendMessage: async (newMessage: MessageType) => {
+	sendMessage: async (ticketId: string, newMessage: MessageType) => {
 		try {
-			const sendMessage = await TicketsService.sendMessage(newMessage);
+			const sendMessage = await TicketsService.sendMessage(
+				ticketId,
+				newMessage
+			);
 
 			const currentTickets = get().ticketsList.map((ticket: TicketType) =>
 				ticket.id === sendMessage.id ? sendMessage : ticket
